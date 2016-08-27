@@ -1,0 +1,22 @@
+{
+  "name": "netatmo-alexa",
+  "version": "1.0.0",
+  "description": "Alexa interface for Netatmo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://iamthechad@github.com/iamthechad/Netatmo-Alexa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamthechad/Netatmo-Alexa/issues"
+  },
+  "homepage": "https://github.com/iamthechad/Netatmo-Alexa#readme",
+  "dependencies": {
+    "alexa-app": "^2.3.4"
+  }
+}
