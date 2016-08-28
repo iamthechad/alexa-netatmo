@@ -1,0 +1,39 @@
+{
+   "intents": [
+      {
+         "intent": "AskTemperature",
+         "slots": [
+            {
+               "name": "Location",
+               "type": "LITERAL"
+            }
+         ]
+      },
+      {
+         "intent": "AskHumidity",
+         "slots": [
+            {
+               "name": "Location",
+               "type": "LITERAL"
+            }
+         ]
+      },
+      {
+         "intent": "AskPressure",
+         "slots": []
+      },
+      {
+         "intent": "AskCO2",
+         "slots": [
+            {
+               "name": "Location",
+               "type": "LITERAL"
+            }
+         ]
+      },
+      {
+         "intent": "AskSound",
+         "slots": []
+      }
+   ]
+}
