@@ -8,6 +8,7 @@ require('./lib/intents/temperature')(app);
 require('./lib/intents/humidity')(app);
 require('./lib/intents/pressure')(app);
 require('./lib/intents/co2')(app);
+require('./lib/intents/sound')(app);
 
 // Output the schema
 //console.log( '\n\nSCHEMA:\n\n'+app.schema()+'\n\n' );
@@ -15,7 +16,6 @@ require('./lib/intents/co2')(app);
 //console.log( '\n\nUTTERANCES:\n\n'+app.utterances()+'\n\n' );
 
 module.exports = app;
-//app.express( express_app, '/netatmo/', true );
 
 // Connect to lambda
 //exports.handler = app.lambda();
