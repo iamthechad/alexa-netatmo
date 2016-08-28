@@ -23,7 +23,7 @@
          "slots": []
       },
       {
-         "intent": "AskCO2",
+         "intent": "AskCarbonDioxide",
          "slots": [
             {
                "name": "Location",

@@ -22,32 +22,22 @@ AskHumidity     what's the humidity in the {Outside|Location}
 AskHumidity     what is the humidity in the {Outside|Location}
 AskHumidity     what's the humidity {Outside|Location}
 AskHumidity     what is the humidity {Outside|Location}
-AskPressure     what's the air] pressure
-AskPressure     what is the air] pressure
-AskCO2  what's the carbon dioxide in {Inside|Location}
-AskCO2  what is the carbon dioxide in {Inside|Location}
-AskCO2  what's the CO2 in {Inside|Location}
-AskCO2  what is the CO2 in {Inside|Location}
-AskCO2  what's the carbon dioxide in the {Inside|Location}
-AskCO2  what is the carbon dioxide in the {Inside|Location}
-AskCO2  what's the CO2 in the {Inside|Location}
-AskCO2  what is the CO2 in the {Inside|Location}
-AskCO2  what's the carbon dioxide {Inside|Location}
-AskCO2  what is the carbon dioxide {Inside|Location}
-AskCO2  what's the CO2 {Inside|Location}
-AskCO2  what is the CO2 {Inside|Location}
-AskCO2  what's the carbon dioxide in {Outside|Location}
-AskCO2  what is the carbon dioxide in {Outside|Location}
-AskCO2  what's the CO2 in {Outside|Location}
-AskCO2  what is the CO2 in {Outside|Location}
-AskCO2  what's the carbon dioxide in the {Outside|Location}
-AskCO2  what is the carbon dioxide in the {Outside|Location}
-AskCO2  what's the CO2 in the {Outside|Location}
-AskCO2  what is the CO2 in the {Outside|Location}
-AskCO2  what's the carbon dioxide {Outside|Location}
-AskCO2  what is the carbon dioxide {Outside|Location}
-AskCO2  what's the CO2 {Outside|Location}
-AskCO2  what is the CO2 {Outside|Location}
+AskPressure     what's the air pressure
+AskPressure     what is the air pressure
+AskPressure     what's the pressure
+AskPressure     what is the pressure
+AskCarbonDioxide        what's the carbon dioxide in {Inside|Location}
+AskCarbonDioxide        what is the carbon dioxide in {Inside|Location}
+AskCarbonDioxide        what's the carbon dioxide in the {Inside|Location}
+AskCarbonDioxide        what is the carbon dioxide in the {Inside|Location}
+AskCarbonDioxide        what's the carbon dioxide {Inside|Location}
+AskCarbonDioxide        what is the carbon dioxide {Inside|Location}
+AskCarbonDioxide        what's the carbon dioxide in {Outside|Location}
+AskCarbonDioxide        what is the carbon dioxide in {Outside|Location}
+AskCarbonDioxide        what's the carbon dioxide in the {Outside|Location}
+AskCarbonDioxide        what is the carbon dioxide in the {Outside|Location}
+AskCarbonDioxide        what's the carbon dioxide {Outside|Location}
+AskCarbonDioxide        what is the carbon dioxide {Outside|Location}
 AskSound        what's the sound level
 AskSound        what is the sound level
 AskSound        what's the sound
