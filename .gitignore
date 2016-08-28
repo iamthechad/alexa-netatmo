@@ -10,6 +10,7 @@
 *.iws
 
 node_modules/
+dist/
 
 # Don't include actual credentials file
 credentials.js
