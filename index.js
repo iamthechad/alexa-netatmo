@@ -10,6 +10,15 @@ require('./lib/intents/pressure')(app);
 require('./lib/intents/co2')(app);
 require('./lib/intents/sound')(app);
 
+// eslint-disable-next-line no-unused-vars
+var APP_ID;
+try {
+  APP_ID = require('./appid').id;
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.log('No APP_ID specified');
+}
+
 // Output the schema
 //console.log( '\n\nSCHEMA:\n\n'+app.schema()+'\n\n' );
 // Output sample utterances

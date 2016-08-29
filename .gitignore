@@ -14,3 +14,6 @@ dist/
 
 # Don't include actual credentials file
 credentials.js
+
+# Don't include appid
+appid.js
