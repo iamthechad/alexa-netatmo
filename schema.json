@@ -4,8 +4,8 @@
          "intent": "AskTemperature",
          "slots": [
             {
-               "name": "Location",
-               "type": "LITERAL"
+               "name": "LOCATION",
+               "type": "LOCATION"
             }
          ]
       },
@@ -13,8 +13,8 @@
          "intent": "AskHumidity",
          "slots": [
             {
-               "name": "Location",
-               "type": "LITERAL"
+               "name": "LOCATION",
+               "type": "LOCATION"
             }
          ]
       },
@@ -26,8 +26,8 @@
          "intent": "AskCarbonDioxide",
          "slots": [
             {
-               "name": "Location",
-               "type": "LITERAL"
+               "name": "LOCATION",
+               "type": "LOCATION"
             }
          ]
       },

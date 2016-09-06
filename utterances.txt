@@ -1,43 +1,25 @@
-AskTemperature  what's the temperature in {Inside|Location}
-AskTemperature  what is the temperature in {Inside|Location}
-AskTemperature  what's the temperature in the {Inside|Location}
-AskTemperature  what is the temperature in the {Inside|Location}
-AskTemperature  what's the temperature {Inside|Location}
-AskTemperature  what is the temperature {Inside|Location}
-AskTemperature  what's the temperature in {Outside|Location}
-AskTemperature  what is the temperature in {Outside|Location}
-AskTemperature  what's the temperature in the {Outside|Location}
-AskTemperature  what is the temperature in the {Outside|Location}
-AskTemperature  what's the temperature {Outside|Location}
-AskTemperature  what is the temperature {Outside|Location}
-AskHumidity     what's the humidity in {Inside|Location}
-AskHumidity     what is the humidity in {Inside|Location}
-AskHumidity     what's the humidity in the {Inside|Location}
-AskHumidity     what is the humidity in the {Inside|Location}
-AskHumidity     what's the humidity {Inside|Location}
-AskHumidity     what is the humidity {Inside|Location}
-AskHumidity     what's the humidity in {Outside|Location}
-AskHumidity     what is the humidity in {Outside|Location}
-AskHumidity     what's the humidity in the {Outside|Location}
-AskHumidity     what is the humidity in the {Outside|Location}
-AskHumidity     what's the humidity {Outside|Location}
-AskHumidity     what is the humidity {Outside|Location}
+AskTemperature  what's the temperature in {LOCATION}
+AskTemperature  what is the temperature in {LOCATION}
+AskTemperature  what's the temperature in the {LOCATION}
+AskTemperature  what is the temperature in the {LOCATION}
+AskTemperature  what's the temperature {LOCATION}
+AskTemperature  what is the temperature {LOCATION}
+AskHumidity     what's the humidity in {LOCATION}
+AskHumidity     what is the humidity in {LOCATION}
+AskHumidity     what's the humidity in the {LOCATION}
+AskHumidity     what is the humidity in the {LOCATION}
+AskHumidity     what's the humidity {LOCATION}
+AskHumidity     what is the humidity {LOCATION}
 AskPressure     what's the air pressure
 AskPressure     what is the air pressure
 AskPressure     what's the pressure
 AskPressure     what is the pressure
-AskCarbonDioxide        what's the carbon dioxide in {Inside|Location}
-AskCarbonDioxide        what is the carbon dioxide in {Inside|Location}
-AskCarbonDioxide        what's the carbon dioxide in the {Inside|Location}
-AskCarbonDioxide        what is the carbon dioxide in the {Inside|Location}
-AskCarbonDioxide        what's the carbon dioxide {Inside|Location}
-AskCarbonDioxide        what is the carbon dioxide {Inside|Location}
-AskCarbonDioxide        what's the carbon dioxide in {Outside|Location}
-AskCarbonDioxide        what is the carbon dioxide in {Outside|Location}
-AskCarbonDioxide        what's the carbon dioxide in the {Outside|Location}
-AskCarbonDioxide        what is the carbon dioxide in the {Outside|Location}
-AskCarbonDioxide        what's the carbon dioxide {Outside|Location}
-AskCarbonDioxide        what is the carbon dioxide {Outside|Location}
+AskCarbonDioxide        what's the carbon dioxide in {LOCATION}
+AskCarbonDioxide        what is the carbon dioxide in {LOCATION}
+AskCarbonDioxide        what's the carbon dioxide in the {LOCATION}
+AskCarbonDioxide        what is the carbon dioxide in the {LOCATION}
+AskCarbonDioxide        what's the carbon dioxide {LOCATION}
+AskCarbonDioxide        what is the carbon dioxide {LOCATION}
 AskSound        what's the sound level
 AskSound        what is the sound level
 AskSound        what's the sound
