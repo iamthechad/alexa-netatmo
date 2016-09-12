@@ -20,9 +20,9 @@ try {
 }
 
 // Output the schema
-console.log( '\n\nSCHEMA:\n\n'+app.schema()+'\n\n' );
+//console.log( '\n\nSCHEMA:\n\n'+app.schema()+'\n\n' );
 // Output sample utterances
-console.log( '\n\nUTTERANCES:\n\n'+app.utterances()+'\n\n' );
+//console.log( '\n\nUTTERANCES:\n\n'+app.utterances()+'\n\n' );
 
 module.exports = app;
 
