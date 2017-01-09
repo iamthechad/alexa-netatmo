@@ -18,6 +18,29 @@
       - [Cards](#cards)
       - [Phrases](#phrases)
       - [TODO/Known Issues](#todoknown-issues)
+    - [Humidity](#humidity)
+      - [Locations](#locations-1)
+      - [Units](#units-1)
+      - [Cards](#cards-1)
+      - [Phrases](#phrases-1)
+      - [TODO/Known Issues](#todoknown-issues-1)
+    - [Air Pressure](#air-pressure)
+      - [Locations](#locations-2)
+      - [Units](#units-2)
+      - [Cards](#cards-2)
+      - [Phrases](#phrases-2)
+      - [TODO/Known Issues](#todoknown-issues-2)
+    - [Carbon Dioxide](#carbon-dioxide)
+      - [Locations](#locations-3)
+      - [Units](#units-3)
+      - [Cards](#cards-3)
+      - [Phrases](#phrases-3)
+      - [TODO/Known Issues](#todoknown-issues-3)
+    - [Sound Level](#sound-level)
+      - [Locations](#locations-4)
+      - [Units](#units-4)
+      - [Cards](#cards-4)
+      - [Phrases](#phrases-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -89,6 +112,7 @@ Deploying the skill requires accessing two different areas of Amazon's infrastru
 ### Creating the Lambda
 
 If you do not have an AWS account, you need to create one. For personal use of this skill, a free account should be sufficient.
+Instructions for creating an AWS account and more information about Lambdas can be found in the [AWS Lambda Getting Started Guide](http://docs.aws.amazon.com/lambda/latest/dg/setup.html).
 
 1. Once logged in to the AWS dashboard, access the Lambda service. There may be a couple of ways to navigate:
   * From the "Services" drop-down menu at the top of the page, select "Compute" -> "Lambda"
@@ -193,3 +217,103 @@ The lambda function can be protected so that only an authorized resource can cal
 * "Full Summary" request to get temperature from all known modules.
 * Request to get all known module names.
 * Enhance the app card
+
+### Humidity
+
+#### Locations
+
+* By default, if no location is specified the skill will return the external humidity and the internal humidity at the main module.
+* Specifying 'inside' as the location will return the internal humidity at the main module.
+* Specifying 'outside' as the location will return the external humidity.
+* Additional internal modules can be dynamically queried by name as location, but the value must be lower case.
+    * For example, I have an additional module named "Master Bedroom". I can query it by using the location `master bedroom`.
+
+#### Units
+
+* Humidity is presented in percentage, so no unit conversion happens.
+
+#### Cards
+
+* No card at present
+
+#### Phrases
+
+* All valid phrases are listed in the `utterances.txt` file with the `AskHumidity` prefix.
+* `LOCATION` is optional. If omitted, the skill will return internal and external humidity.
+
+#### TODO/Known Issues
+
+* Externalize/internationalize strings?
+* Request to get all known module names.
+* Add an app card
+
+### Air Pressure
+
+#### Locations
+
+* No locations are supported since only the main module reports pressure.
+
+#### Units
+
+* Pressure should be returned in the units that the Netatmo user has configured for their installation.
+
+#### Cards
+
+* No card at present
+
+#### Phrases
+
+* All valid phrases are listed in the `utterances.txt` file with the `AskPressure` prefix.
+* No locations are supported since the pressure is only measured by the main module.
+
+#### TODO/Known Issues
+
+* Externalize/internationalize strings?
+* Add an app card
+
+### Carbon Dioxide
+
+#### Locations
+
+* By default, if no location is specified the skill will return the CO2 levels for all known internal modules.
+* Specifying 'inside' as the location will return the CO2 level at the main module.
+* Specifying 'outside' as the location will return an error since the external module does not support CO2.
+* Additional internal modules can be dynamically queried by name as location, but the value must be lower case.
+    * For example, I have an additional module named "Master Bedroom". I can query it by using the location `master bedroom`.
+
+#### Units
+
+* CO2 is presented in parts per million so no conversion is required.
+
+#### Cards
+
+* No card at present
+
+#### Phrases
+
+* All valid phrases are listed in the `utterances.txt` file with the `AskCarbonDioxide` prefix.
+* `LOCATION` is optional. If omitted, the skill will return CO2 levels for all known internal modules.
+
+#### TODO/Known Issues
+
+* Externalize/internationalize strings?
+* Add an app card
+
+### Sound Level
+
+#### Locations
+
+* No locations are supported since only the main module reports sound level.
+
+#### Units
+
+* Sound level is presented in decibels. No conversion is required.
+
+#### Cards
+
+* No card at present
+
+#### Phrases
+
+* All valid phrases are listed in the `utterances.txt` file with the `AskSound` prefix.
+* No locations are supported since the sound level is only measured by the main module.
