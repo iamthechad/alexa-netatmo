@@ -5,6 +5,12 @@
 - [Netatmo Skill for Alexa](#netatmo-skill-for-alexa)
   - [Getting Started - Local Setup](#getting-started---local-setup)
     - [Exercising the Skill Locally](#exercising-the-skill-locally)
+  - [Getting Started - Deployment to AWS](#getting-started---deployment-to-aws)
+    - [Prepare Code for Deployment](#prepare-code-for-deployment)
+    - [Creating the Lambda](#creating-the-lambda)
+    - [Creating the Alexa Skill](#creating-the-alexa-skill)
+    - [Add the skill to Alexa](#add-the-skill-to-alexa)
+    - [Adding one more layer of security](#adding-one-more-layer-of-security)
   - [Feature Support](#feature-support)
     - [Temperature](#temperature)
       - [Locations](#locations)
@@ -69,6 +75,92 @@ To check the temperature:
 1. Try some variations
     * Specify `inside` or `outside` in the `LOCATION` field
     * I have a module set up in my bedroom named "Master Bedroom". I can enter `master bedroom` (all lower-case) in the location field to get its temperature
+
+## Getting Started - Deployment to AWS
+
+Deploying the skill requires accessing two different areas of Amazon's infrastructure. The actual code to run is deployed in AWS as a Lambda, and the Alexa skill is created through the developer interface.
+
+### Prepare Code for Deployment
+
+* If you have not yet done so, install the Gulp command line client via `npm install -g gulp-cli`. (You may need to preface that command with `sudo` if you did not use NVM to install NodeJS.)
+* In the `alexa-server/apps/alexa-netatmo` directory, run `gulp`. This will kick off the default workflow and create a zip file in `alexa-server/apps/alexa-netatmo` named `netatmo.zip`.
+* Keep track of the `netatmo.zip` file. It will be uploaded to AWS in the next step.
+
+### Creating the Lambda
+
+If you do not have an AWS account, you need to create one. For personal use of this skill, a free account should be sufficient.
+
+1. Once logged in to the AWS dashboard, access the Lambda service. There may be a couple of ways to navigate:
+  * From the "Services" drop-down menu at the top of the page, select "Compute" -> "Lambda"
+  * From the dashboard, expand the "All Services" section and select "Compute" -> "Lambda"
+1. Select "Create a Lambda Function"
+1. Select "Blank Function"
+1. Click in the dotted outline to show the list of selectable triggers, and select "Alexa Skills Kit"
+1. Select "Next"
+1. Give the Lambda a name
+1. Select "Node.js 4.3" as the Runtime
+1. In "Code Entry Type", select "Upload a Zip File"
+1. Select the "Upload" button, and select the `netatmo.zip` file that was previously created.
+1. Leave "Handler" as-is
+1. Select the Role to use when running the lambda
+    * If you have previously created a lambda, you can select its role under "Role"
+    * To create a new role:
+        1. Select "Create new role from template(s)" in the "Role" dropdown
+        1. Enter a new role name. This name is unique across your AWS account, so use a descriptive name like `lambda_basic_execution`
+        1. No selection of template is actually necessary - the role will be created with the correct execution privileges.
+1. In the "Advanced Settings" section, increase the "Timeout" to 7 seconds
+1. Select "Next", then select "Create Function" to create the lambda
+1. Take note of the "ARN" value displayed in the upper-right once the lambda is created. This value will be needed to create the skill in the next step.
+
+### Creating the Alexa Skill
+
+To add the Alexa skill, you'll need an Amazon developer account. Sign up at https://developer.amazon.com
+
+1. Once logged in to the developer portal, select the "Alexa" header at the top of the page.
+1. Select the "Get Started" button under the "Alexa Skills Kit" header.
+1. Select the "Add a New Skill" button. **During the skill creation process leave all defaults as-is unless specified in the steps below.**
+1. Enter a name for the skill. I don't know how unique these names must be, but I simply entered `netatmo`.
+1. Enter an Invocation Name. This is what wil be used when you say "Alexa, ask XXX". I've discovered that Alexa has a very hard time understanding the word "netatmo", so I don't recommend it as an invocation name. I used `weather station` for my skill.
+1. Select "Next"
+1. Enter the schema and utterances for the skill. If you've not changed the behavior of the skill, these are located in `alexa-server/apps/alexa-netatmo/schema.json` and `alexa-server/apps/alexa-netatmo/utterances.txt`. Open these files and copy their contents into the corresponding area.
+    * **Please refer to TBD section for re-creating these files when the skill behavior has changed.**
+1. Select "Add Slot Type" to add the required custom slot type.
+    1. In the "Enter Type" field, enter `LOCATION`
+    1. In the "Enter Values" field, enter (each value goes on a separate line):
+        * `Inside`
+        * `Outside`
+        * `Great Room`
+        * `Living Room`
+        * `Bedroom`
+        * `Master Bedroom`
+    1. Save the slot type
+1. Select "Next"
+1. For "Service Endpoint Type", select "AWS Lambda ARN"
+1. Select your geographic region, likely "North America"
+1. Paste in the ARN for the lambda previously created
+1. Select "Next"
+1. The skill should be ready for testing
+    * On the "Test" tab, verify that everything is working by typing something like "what's the temperature" in the utterance field and selecting the "Ask" button.
+    * If all is working properly, the lambda response should contain the proper values.
+
+### Add the skill to Alexa
+
+* If you used the same account for Alexa as you did for the Amazon Developer account, the skill should already be listed in "Your Skills" in the Alexa app.
+
+### Adding one more layer of security
+
+The lambda function can be protected so that only an authorized resource can call it. This can prevent unwanted usage that may lead to unexpected charges.
+
+1. In the Amazon Developer dashboard, navigate to "Alexa" -> "Alexa Skills Kit" -> "Getting Started"
+1. Select your skill from the list.
+1. Copy the "Application Id" value from the "Skill Information" tab.
+1. In `alexa-server/apps/alexa-netatmo`, copy `appid.js.sample` to `appid.js`.
+1. Paste the copied application id between the quotes in `appid.js`.
+1. Re-create the zip file by running `gulp` in the `alexa-server/apps/alexa-netatmo` directory.
+1. In the AWS dashboard, access the Lambda section and select the previously created lamdba.
+1. Select the "Code" tab, then select "Upload a .ZIP file" for "Code entry type" and upload the newly updated `netatmo.zip` file.
+1. Return to the Amazon Developer portal and verify that the skill is still working.
+
 
 ## Feature Support
 
