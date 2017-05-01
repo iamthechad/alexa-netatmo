@@ -24,3 +24,5 @@ AskSound        what's the sound level
 AskSound        what is the sound level
 AskSound        what's the sound
 AskSound        what is the sound
+AskRain about the rain level
+AskRain about the rain
